@@ -22,8 +22,8 @@ Note: This repository targets Windows desktop only. If you want to run on other 
 1. Clone the repo:
 
 ```powershell
-git clone https://github.com/Elidcoder/Frankensteins-a-DandD-Character-Builder.git
-cd Frankensteins-a-DandD-Character-Builder
+git clone https://github.com/Elidcoder/Frankensteins.git
+cd Frankensteins
 ```
 
 2. Install Flutter and Dart, then get packages:
