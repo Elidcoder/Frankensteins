@@ -1,6 +1,6 @@
 // External Imports
 import 'dart:convert';
-import 'dart:io';
+import "dart:io" show File;
 
 import "package:flutter/foundation.dart" show debugPrint;
 import "package:frankenstein/core/services/storage_service.dart";
@@ -491,6 +491,14 @@ class GlobalListManager {
   /// Load content from an external JSON file and add it to the existing content
   Future<void> loadContentFromFile(File file) async {
     final jsonString = await file.readAsString();
+    return loadContentFromJson(jsonString);
+  }
+
+  /// Load content from an external JSON document and add it to the existing
+  /// content. Callers are responsible for reading the file/bytes into a string
+  /// (desktop reads from disk, web from the picked file's bytes) so this stays
+  /// free of `dart:io` and works on every platform.
+  Future<void> loadContentFromJson(String jsonString) async {
     final jsonMap = jsonDecode(jsonString);
 
     // Parse content from the file

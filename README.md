@@ -1,5 +1,7 @@
 # Frankenstein's D&D 5e Character Builder
 
+[![CI](https://github.com/Elidcoder/Frankensteins/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/Elidcoder/Frankensteins/actions/workflows/ci.yml)
+
 ## Overview
 
 Frankenstein's is a free, open-source Windows desktop application for creating, editing, and managing Dungeons & Dragons 5th Edition characters. Built with Flutter and Dart, it allows for comprehensive character creation with PDF export, custom content management, and content sharing capabilities.
@@ -157,6 +159,38 @@ pre-commit run commit-message-format --all-files
 # To skip for a specific commit (should be avoided):
 git commit --no-verify
 ```
+
+## Testing & CI
+
+The unit test suite lives under [test/](test/) and mirrors the layout of `lib/`. Conventions, fixture patterns, and known gaps are documented in [test/README.md](test/README.md).
+
+Run locally:
+
+```powershell
+flutter test                       # full suite
+flutter test test/models           # subtree
+flutter test --reporter=expanded   # verbose
+```
+
+### Hook stages
+
+| Stage      | What runs                                  | When                         |
+|------------|--------------------------------------------|------------------------------|
+| pre-commit | `dart format`, `dart analyze`, file checks | every `git commit`           |
+| commit-msg | commit message format validator            | every `git commit`           |
+| pre-push   | `flutter test`                              | every `git push`             |
+
+### Continuous integration
+
+[`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs on every feature-branch push and every PR to `master`. The pipeline:
+
+1. Sets up a pinned Flutter version on an Ubuntu runner (via `subosito/flutter-action`).
+2. Resolves `pub` dependencies.
+3. Verifies committed `*.g.dart` files are in sync with their source (catches forgotten `build_runner` runs).
+4. Runs `flutter analyze --fatal-infos --fatal-warnings`.
+5. Runs the unit test suite.
+
+Failing any step blocks the PR.
 
 ## Development workflow
 

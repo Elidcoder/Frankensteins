@@ -1,6 +1,6 @@
 // External imports
 import "package:flutter/material.dart";
-import "package:frankenstein/core/services/json_storage_service.dart";
+import "package:frankenstein/core/services/storage_factory.dart";
 
 // Project imports
 import "core/services/global_list_manager.dart";
@@ -29,8 +29,9 @@ class _FrankensteinAppState extends State<FrankensteinApp> {
   }
 
   Future<void> _initializeApp() async {
-    // Initialize global list manager using the JsonStorageService
-    await GlobalListManager().initialise(JsonStorageService());
+    // Initialize global list manager using the platform-appropriate storage
+    // back end (file-based on desktop, localStorage on web).
+    await GlobalListManager().initialise(createStorageService());
 
     // Initialize theme manager
     await ThemeManager.instance.initialize();

@@ -1,0 +1,290 @@
+00:00 +0: loading C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart
+00:00 +0: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: (setUpAll)
+Initialized spell list with 1 spells
+Initialized class list with 1 classes
+Initialized race list with 1 races
+Initialized feat list with 1 feats
+Initialized item list with 1 items
+Initialized background list with 1 backgrounds
+Initialized proficiency list with 2 proficiencies
+Initialized language list with 3 languages
+Initialized theme list with 1 themes
+Initialized character list with 0 characters
+Updated group list with 0 groups
+00:00 +0: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: GlobalListManager singleton factory always returns the same instance
+00:00 +1: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: GlobalListManager singleton initialise is idempotent (returns true on re-init with same fake)
+00:00 +2: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: content list getters spellList contains the seeded spell
+00:00 +3: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: content list getters classList contains the seeded class
+00:00 +4: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: content list getters raceList contains the seeded race
+00:00 +5: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: content list getters featList contains the seeded feat
+00:00 +6: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: content list getters itemList contains the seeded item
+00:00 +7: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: content list getters backgroundList contains the seeded background
+00:00 +8: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: content list getters proficiencyList contains the seeded proficiencies
+00:00 +9: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: content list getters languageList contains the seeded languages
+00:00 +10: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: content list getters themeList contains the seeded theme
+00:00 +11: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: content list getters characterList starts empty (no characters seeded)
+00:00 +12: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: content list getters groupList is non-null and sorted (no group seeded so empty)
+00:00 +13: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: saveSpell appends the new spell to the spell list
+Spell "Unique Test Spell A" saved successfully.
+00:00 +14: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: saveTheme removes any matching theme then appends the new one
+Theme "Custom Theme: backing: MaterialColor(primary value: Color(alpha: 1.0000, red: 0.1294, green: 0.5882, blue: 0.9529, colorSpace: ColorSpace.sRGB)), text: Color(alpha: 1.0000, red: 1.0000, green: 1.0000, blue: 1.0000, colorSpace: ColorSpace.sRGB), background: Color(alpha: 1.0000, red: 0.0000, green: 0.0000, blue: 0.0000, colorSpace: ColorSpace.sRGB)" saved successfully.
+00:00 +15: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: saveCharacter & deleteCharacter saveCharacter adds a new character to the list
+Attempting to save character: Test Hero
+No previous entry found, continuing to save character: Test Hero
+Character "Test Hero" saved successfully.
+00:00 +16: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: saveCharacter & deleteCharacter saveCharacter updates rather than duplicates an existing entry
+Attempting to save character: Test Hero
+No previous entry found, continuing to save character: Test Hero
+Character "Test Hero" saved successfully.
+Attempting to save character: Test Hero
+Previous entry found, deleting before saving character: Test Hero
+Character "Test Hero" saved successfully.
+00:00 +17: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: saveCharacter & deleteCharacter deleteCharacter removes the character from the list
+Attempting to save character: Test Hero
+No previous entry found, continuing to save character: Test Hero
+Character "Test Hero" saved successfully.
+Character "Test Hero" deleted successfully.
+Character "Test Hero" removed from list successfully.
+00:00 +18: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/global_list_manager_test.dart: (tearDownAll)
+00:00 +18: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: (setUpAll)
+Using existing main storage directory: C:\Users\arieh\AppData\Local\Temp\frankenstein_test_46abc04\frankenstein_content
+Created character storage directory: C:\Users\arieh\AppData\Local\Temp\frankenstein_test_46abc04\frankenstein_content\frankenstein_characters
+JsonStorageService initialized successfully
+00:01 +18: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: initialize is idempotent
+00:01 +19: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: initialize creates the characters subdirectory
+00:01 +20: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: backgrounds round-trip save then load returns equivalent entries
+00:01 +21: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: classes round-trip save then load returns equivalent entries
+00:01 +22: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: feats round-trip save then load returns equivalent entries
+00:01 +23: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: items round-trip save then load returns equivalent entries
+00:01 +24: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: languages round-trip save then load preserves the list
+00:01 +25: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: proficiencies round-trip save then load returns equivalent entries
+00:01 +26: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: races round-trip save then load returns equivalent entries
+00:01 +27: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: spells round-trip save then load returns equivalent entries
+00:01 +28: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: themes round-trip save then load returns equivalent entries
+00:01 +29: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: missing-file behaviour load* returns [] when there is no on-disk file
+No class data found
+00:01 +30: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: missing-file behaviour load* returns [] when the file is empty
+No feat data found
+00:01 +31: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: character storage saveCharacter writes a json file named after the uniqueID
+Index updated with 1 characters
+Character  Test Hero, UID: 444444444444444, saved successfully
+00:01 +32: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: character storage saveCharacter also updates the index file
+Index updated with 2 characters
+Character  Test Hero, UID: 555555555555555, saved successfully
+00:01 +33: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/theme/colour_scheme_test.dart: ColourScheme round-trips through JSON
+00:01 +33: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: character storage getAllCharacters loads every saved character via the index
+Index updated with 3 characters
+Character  Test Hero, UID: 666666666666666, saved successfully
+00:01 +34: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: character storage getAllCharacters loads every saved character via the index
+Index updated with 4 characters
+00:01 +35: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: character storage getAllCharacters loads every saved character via the index
+Character  Test Hero, UID: 777777777777777, saved successfully
+00:01 +36: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: character storage getAllCharacters loads every saved character via the index
+00:01 +37: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: character storage getAllCharacters loads every saved character via the index
+00:01 +38: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: character storage getAllCharacters loads every saved character via the index
+00:01 +39: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: character storage getAllCharacters loads every saved character via the index
+Loaded 4 characters from storage
+00:01 +40: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: character storage updateCharacter overwrites the existing file
+Index updated with 5 characters
+Character  Test Hero, UID: 888888888888888, saved successfully
+Index updated with 5 characters
+Character  Test Hero, UID: 888888888888888, updated successfully
+Loaded 5 characters from storage
+00:02 +41: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: character storage deleteCharacter removes the file and updates the index
+Index updated with 6 characters
+Character  Test Hero, UID: 999999999999999, saved successfully
+Attempting to delete file: C:\Users\arieh\AppData\Local\Temp\frankenstein_test_46abc04\frankenstein_content\frankenstein_characters\999999999999999.json
+File exists, deleting: C:\Users\arieh\AppData\Local\Temp\frankenstein_test_46abc04\frankenstein_content\frankenstein_characters\999999999999999.json
+Index updated with 5 characters
+Character (ID: 999999999999999) deleted successfully
+00:02 +42: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: character storage deleteCharacter returns true even when the file does not exist
+Attempting to delete file: C:\Users\arieh\AppData\Local\Temp\frankenstein_test_46abc04\frankenstein_content\frankenstein_characters\123.json
+Index updated with 5 characters
+Character (ID: 123) deleted successfully
+00:02 +43: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/services/json_storage_service_test.dart: (tearDownAll)
+00:02 +43: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/theme/theme_manager_test.dart: (setUpAll)
+Initialized spell list with 1 spells
+Initialized class list with 1 classes
+Initialized race list with 1 races
+Initialized feat list with 1 feats
+Initialized item list with 1 items
+Initialized background list with 1 backgrounds
+Initialized proficiency list with 2 proficiencies
+Initialized language list with 3 languages
+Initialized theme list with 1 themes
+Initialized character list with 0 characters
+Updated group list with 0 groups
+00:02 +43: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/theme/theme_manager_test.dart: ThemeManager instance getter returns a singleton
+00:02 +44: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/theme/theme_manager_test.dart: ThemeManager currentScheme is non-null with default colours before initialize
+00:02 +45: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/theme/theme_manager_test.dart: ThemeManager updateScheme notifies registered listeners
+Theme "Custom Theme: backing: MaterialColor(primary value: Color(alpha: 1.0000, red: 0.6118, green: 0.1529, blue: 0.6902, colorSpace: ColorSpace.sRGB)), text: MaterialColor(primary value: Color(alpha: 1.0000, red: 1.0000, green: 0.9216, blue: 0.2314, colorSpace: ColorSpace.sRGB)), background: Color(alpha: 1.0000, red: 0.0000, green: 0.0000, blue: 0.0000, colorSpace: ColorSpace.sRGB)" saved successfully.
+00:02 +46: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/theme/theme_manager_test.dart: ThemeManager updateScheme replaces currentScheme
+Theme "Custom Theme: backing: MaterialColor(primary value: Color(alpha: 1.0000, red: 0.2980, green: 0.6863, blue: 0.3137, colorSpace: ColorSpace.sRGB)), text: MaterialColor(primary value: Color(alpha: 1.0000, red: 1.0000, green: 0.5961, blue: 0.0000, colorSpace: ColorSpace.sRGB)), background: Color(alpha: 1.0000, red: 1.0000, green: 1.0000, blue: 1.0000, colorSpace: ColorSpace.sRGB)" saved successfully.
+00:02 +47: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/theme/theme_manager_test.dart: ThemeManager removeListener stops further notifications
+Theme "Custom Theme: backing: MaterialColor(primary value: Color(alpha: 1.0000, red: 0.1294, green: 0.5882, blue: 0.9529, colorSpace: ColorSpace.sRGB)), text: Color(alpha: 1.0000, red: 1.0000, green: 1.0000, blue: 1.0000, colorSpace: ColorSpace.sRGB), background: Color(alpha: 1.0000, red: 0.0000, green: 0.0000, blue: 0.0000, colorSpace: ColorSpace.sRGB)" saved successfully.
+00:02 +48: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/theme/theme_manager_test.dart: ThemeManager themeData picks light brightness for light background
+Theme "Custom Theme: backing: MaterialColor(primary value: Color(alpha: 1.0000, red: 0.1294, green: 0.5882, blue: 0.9529, colorSpace: ColorSpace.sRGB)), text: Color(alpha: 1.0000, red: 0.0000, green: 0.0000, blue: 0.0000, colorSpace: ColorSpace.sRGB), background: Color(alpha: 1.0000, red: 1.0000, green: 1.0000, blue: 1.0000, colorSpace: ColorSpace.sRGB)" saved successfully.
+00:03 +49: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/theme/theme_manager_test.dart: ThemeManager themeData picks dark brightness for dark background
+Theme "Custom Theme: backing: MaterialColor(primary value: Color(alpha: 1.0000, red: 0.1294, green: 0.5882, blue: 0.9529, colorSpace: ColorSpace.sRGB)), text: Color(alpha: 1.0000, red: 1.0000, green: 1.0000, blue: 1.0000, colorSpace: ColorSpace.sRGB), background: Color(alpha: 1.0000, red: 0.0000, green: 0.0000, blue: 0.0000, colorSpace: ColorSpace.sRGB)" saved successfully.
+00:03 +50: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/theme/theme_manager_test.dart: ThemeManager themeData propagates backing colour to AppBar background
+Theme "Custom Theme: backing: Color(alpha: 1.0000, red: 0.0706, green: 0.2039, blue: 0.3373, colorSpace: ColorSpace.sRGB), text: Color(alpha: 1.0000, red: 1.0000, green: 1.0000, blue: 1.0000, colorSpace: ColorSpace.sRGB), background: Color(alpha: 1.0000, red: 1.0000, green: 1.0000, blue: 1.0000, colorSpace: ColorSpace.sRGB)" saved successfully.
+00:03 +51: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/theme/theme_manager_test.dart: (tearDownAll)
+00:03 +51: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/utils/helpers_test.dart: sum<T extends num> adds ints
+00:03 +52: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/utils/helpers_test.dart: sum<T extends num> adds doubles
+00:03 +53: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/utils/helpers_test.dart: displayPlural returns empty string for single-element list
+00:03 +54: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/utils/helpers_test.dart: displayPlural returns 's' for multi-element list
+00:03 +55: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/utils/helpers_test.dart: displayPlural returns empty string for empty list
+00:03 +56: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/utils/helpers_test.dart: isAllowedContent is a stub that always returns true (TODO in source)
+00:03 +57: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/utils/helpers_test.dart: mapEquipment returns Armour when EquipmentType contains 'Armour'
+00:03 +58: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/utils/helpers_test.dart: mapEquipment returns Weapon when EquipmentType contains 'Weapon'
+00:03 +59: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/utils/helpers_test.dart: mapEquipment returns plain Item when EquipmentType is neither Armour nor Weapon
+00:03 +60: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/core/utils/helpers_test.dart: mapEquipment falls through to Item.fromJson when EquipmentType contains 'Magic'
+00:04 +61: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/background_test.dart: Background round-trips through JSON
+00:04 +62: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/background_test.dart: Background applies default values when optional fields are absent
+00:04 +63: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/background_test.dart: Background getLanguageOptions returns own languageOptions when non-empty
+00:04 +64: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/background_test.dart: Background getLanguageOptions when languageOptions is empty (setUpAll)
+Initialized spell list with 1 spells
+Initialized class list with 1 classes
+Initialized race list with 1 races
+Initialized feat list with 1 feats
+Initialized item list with 1 items
+Initialized background list with 1 backgrounds
+Initialized proficiency list with 2 proficiencies
+Initialized language list with 3 languages
+Initialized theme list with 1 themes
+Initialized character list with 0 characters
+Updated group list with 0 groups
+00:04 +64: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/background_test.dart: Background getLanguageOptions when languageOptions is empty falls back to GlobalListManager.languageList
+00:04 +65: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/background_test.dart: Background getLanguageOptions when languageOptions is empty (tearDownAll)
+00:04 +65: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/class_test.dart: Class round-trips through JSON
+00:04 +66: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/class_test.dart: Class Class implements Content interface
+00:05 +67: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/proficiency_test.dart: Proficiency constructor stores tree
+00:05 +68: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/proficiency_test.dart: Proficiency fromJson reads ProficiencyTree key
+00:05 +69: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/proficiency_test.dart: Proficiency toJson writes ProficiencyTree key
+00:05 +70: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/proficiency_test.dart: Proficiency round-trips through JSON
+00:05 +71: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/proficiency_test.dart: Proficiency toJson copies the list so external mutation does not bleed
+00:05 +72: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/race_test.dart: Race round-trips through JSON when no proficienciesGained are set
+00:05 +73: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/race_test.dart: Race applies default values when fields are absent
+00:05 +74: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/race_test.dart: Race with proficienciesGained (requires GlobalListManager) (setUpAll)
+Initialized spell list with 1 spells
+Initialized class list with 1 classes
+Initialized race list with 1 races
+Initialized feat list with 1 feats
+Initialized item list with 1 items
+Initialized background list with 1 backgrounds
+Initialized proficiency list with 2 proficiencies
+Initialized language list with 3 languages
+Initialized theme list with 1 themes
+Initialized character list with 0 characters
+Updated group list with 0 groups
+00:05 +74: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/race_test.dart: Race with proficienciesGained (requires GlobalListManager) resolves gainedProficiencies via GlobalListManager
+00:05 +75: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/race_test.dart: Race with proficienciesGained (requires GlobalListManager) (tearDownAll)
+00:06 +75: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/subclass_test.dart: Subclass round-trips through JSON
+00:06 +76: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/subclass_test.dart: Subclass roundDown can be null
+00:06 +77: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/subrace_test.dart: Subrace round-trips through JSON when no proficienciesGained are set
+00:06 +78: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/subrace_test.dart: Subrace applies default values when optional fields are absent
+00:06 +79: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/subrace_test.dart: Subrace with proficienciesGained (requires GlobalListManager) (setUpAll)
+Initialized spell list with 1 spells
+Initialized class list with 1 classes
+Initialized race list with 1 races
+Initialized feat list with 1 feats
+Initialized item list with 1 items
+Initialized background list with 1 backgrounds
+Initialized proficiency list with 2 proficiencies
+Initialized language list with 3 languages
+Initialized theme list with 1 themes
+Initialized character list with 0 characters
+Updated group list with 0 groups
+00:07 +79: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/subrace_test.dart: Subrace with proficienciesGained (requires GlobalListManager) resolves gainedProficiencies via GlobalListManager
+00:07 +80: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/character_elements/subrace_test.dart: Subrace with proficienciesGained (requires GlobalListManager) (tearDownAll)
+00:07 +80: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/equipment/armour_test.dart: Armour round-trips through JSON
+00:07 +81: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/equipment/armour_test.dart: Armour is an Item subtype
+00:07 +82: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/equipment/armour_test.dart: Armour imposeStealthDisadvantage defaults to false when absent
+00:08 +83: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/equipment/item_test.dart: Item round-trips through JSON
+00:08 +84: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/equipment/item_test.dart: Item stackable defaults to false when absent from JSON
+00:08 +85: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/equipment/item_test.dart: Item name and other fields are mutable
+00:08 +86: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/equipment/weapon_test.dart: Weapon round-trips through JSON
+00:08 +87: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/equipment/weapon_test.dart: Weapon is an Item subtype
+00:08 +88: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/equipment/weapon_test.dart: Weapon stackable defaults to false when absent
+00:08 +89: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/equipment/weapon_test.dart: Weapon parses nested damageDiceAndType as List<List<String>>
+00:09 +90: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/game_mechanics/feat_test.dart: Feat round-trips through JSON
+00:09 +91: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/game_mechanics/feat_test.dart: Feat equality identical instances are equal
+00:09 +92: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/game_mechanics/feat_test.dart: Feat equality matching field values are equal
+00:09 +93: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/game_mechanics/feat_test.dart: Feat equality differing names are not equal
+00:09 +94: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/game_mechanics/feat_test.dart: Feat equality differing abilities are not equal
+00:09 +95: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/game_mechanics/feat_test.dart: Feat equality differing numberOfTimesTakeable are not equal
+00:09 +96: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/game_mechanics/feat_test.dart: Feat equality a Feat is never equal to a non-Feat
+00:09 +97: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/game_mechanics/feat_test.dart: Feat equality hashCode is consistent with equality
+00:09 +98: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/game_mechanics/feat_test.dart: Feat display getter formats bonus abilities
+00:09 +99: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/game_mechanics/selected_feat_test.dart: SelectedFeat round-trips through JSON
+00:09 +100: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/game_mechanics/selected_feat_test.dart: SelectedFeat timesTaken is mutable
+00:10 +101: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/game_mechanics/spell_test.dart: Spell round-trips through JSON
+00:10 +102: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/game_mechanics/spell_test.dart: Spell applies default values when fields are absent from JSON
+00:10 +103: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/content/game_mechanics/spell_test.dart: Spell preserves Content interface contract
+00:10 +104: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/ability_score/ability_score_test.dart: AbilityScore constructor stores name and value
+00:10 +105: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/ability_score/ability_score_test.dart: AbilityScore abilityScoreCost costs 1 for value <= 12
+00:10 +106: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/ability_score/ability_score_test.dart: AbilityScore abilityScoreCost costs 2 for value > 12
+00:10 +107: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/ability_score/ability_score_test.dart: AbilityScore round-trips through JSON
+00:10 +108: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/ability_score/ability_score_test.dart: AbilityScore value is mutable
+00:11 +109: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_description_test.dart: CharacterDescription default constructor produces empty strings for every field
+00:11 +110: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_description_test.dart: CharacterDescription named constructor populates every field
+00:11 +111: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_description_test.dart: CharacterDescription round-trips through JSON
+00:11 +112: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_description_test.dart: CharacterDescription fields are mutable
+00:11 +113: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character constructor auto-generates a 15-digit uniqueID when none is provided
+00:11 +114: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character constructor two characters auto-generate distinct uniqueIDs
+00:11 +115: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character constructor uses the provided uniqueID when given
+00:11 +116: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character constructor name getter reflects characterDescription.name
+00:11 +117: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character constructor abilityScores returns all six scores in canonical order
+00:11 +118: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character equality two characters with the same uniqueID are equal
+00:11 +119: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character equality two characters with different uniqueIDs are unequal
+00:11 +120: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character equality identical reference is equal
+00:11 +121: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.getCopy regenerates uniqueID for the copy (documented behaviour)
+00:11 +122: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.getCopy copies primitive fields
+00:11 +123: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.getCopy languagesKnown is a separate list (mutation does not bleed)
+00:11 +124: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.getCopy currency map is a separate map (mutation does not bleed)
+00:11 +125: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.getCopy nested speedBonuses lists are deeply copied
+00:11 +126: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.getCopy skillsSelected Queue is a separate Queue
+00:11 +127: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.basicsComplete true when name, gender, and playerName are all non-blank
+00:11 +128: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.basicsComplete false when name is blank
+00:11 +129: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.basicsComplete false when name is whitespace only
+00:11 +130: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.basicsComplete false when gender is blank
+00:11 +131: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.basicsComplete false when playerName is blank
+00:11 +132: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.backstoryComplete true when every description field and extraFeatures is filled
+00:11 +133: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.backstoryComplete false when any single field is blank
+00:11 +134: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.backstoryComplete false when extraFeatures is blank
+00:11 +135: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.chosenAllSpells true when there are no outstanding spell choices
+00:11 +136: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.chosenAllSpells false when at least one entry still needs picks
+00:11 +137: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.chosenAllSpells true when the spell-list is empty
+00:11 +138: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.chosenAllEqipment (sic) true when every choice has been resolved
+00:11 +139: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.chosenAllEqipment (sic) false when an unresolved choice remains
+00:11 +140: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character JSON round-trip preserves uniqueID, descriptions, and primitive build flags
+00:11 +141: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character JSON round-trip preserves the six ability scores
+00:11 +142: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character JSON round-trip preserves skillsSelected as a Queue<String>
+00:11 +143: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character JSON round-trip preserves featsSelected as Map<Feat, int>
+00:11 +144: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character JSON round-trip preserves stackableEquipmentSelected map
+00:11 +145: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.createDefault (requires GlobalListManager) (setUpAll)
+Initialized spell list with 1 spells
+Initialized class list with 1 classes
+Initialized race list with 1 races
+Initialized feat list with 1 feats
+Initialized item list with 1 items
+Initialized background list with 1 backgrounds
+Initialized proficiency list with 2 proficiencies
+Initialized language list with 3 languages
+Initialized theme list with 1 themes
+Initialized character list with 0 characters
+Updated group list with 0 groups
+00:11 +145: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.createDefault (requires GlobalListManager) returns a Character with default ability scores of 8
+00:11 +146: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.createDefault (requires GlobalListManager) starts with Common in the languagesKnown list
+00:11 +147: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.createDefault (requires GlobalListManager) has all 26 default skill bonus entries seeded to 0
+00:11 +148: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.createDefault (requires GlobalListManager) starts with all five currencies at zero
+00:11 +149: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.createDefault (requires GlobalListManager) ACList starts with the unarmored 10 + dexterity formula
+00:11 +150: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/models/core/character/character_test.dart: Character.createDefault (requires GlobalListManager) (tearDownAll)
+00:12 +150: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/test_helpers/fake_storage_service_test.dart: FakeStorageService initialize marks initialized
+00:12 +151: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/test_helpers/fake_storage_service_test.dart: FakeStorageService initialize rethrows when configured to fail
+00:12 +152: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/test_helpers/fake_storage_service_test.dart: FakeStorageService loadX returns a copy of the seed list (callers can't mutate seed)
+00:12 +153: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/test_helpers/fake_storage_service_test.dart: FakeStorageService saveSpells replaces the seed list
+00:12 +154: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/test_helpers/fake_storage_service_test.dart: FakeStorageService saveCharacter adds a new character
+00:12 +155: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/test_helpers/fake_storage_service_test.dart: FakeStorageService saveCharacter replaces an existing character with the same UID
+00:12 +156: C:/Users/arieh/Dart/Frankensteins-a-DandD-Character-Builder/test/test_helpers/fake_storage_service_test.dart: FakeStorageService deleteCharacter returns true on a hit, false on a miss
+00:12 +157: All tests passed!

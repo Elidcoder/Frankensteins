@@ -3,15 +3,20 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:frankenstein/core/services/storage_service.dart'
-    show StorageService;
-import 'package:frankenstein/core/services/storage_service.dart';
+import 'package:frankenstein/core/services/content_storage_base.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 
 import "../../../models/index.dart";
 
-class JsonStorageService implements StorageService {
+/// Desktop/mobile storage back end: persists content and characters as JSON
+/// files under the application documents directory.
+///
+/// Web has no filesystem, so the web build uses `WebStorageService` instead;
+/// the two are selected at runtime by `storage_factory.dart`. The shared
+/// content load/save logic lives in [JsonContentStorage]; this class only
+/// supplies the file-backed [readJson]/[writeJson] plus character storage.
+class JsonStorageService extends JsonContentStorage {
   // TODO(LOOK FOR RACE CONDITIONS - MAYBE USE MUTEX)
   static final JsonStorageService _instance = JsonStorageService._internal();
   factory JsonStorageService() => _instance;
@@ -76,22 +81,10 @@ class JsonStorageService implements StorageService {
   Future<void> _initializeDefaultContent() async {
     debugPrint('Initializing default SRD content from assets...');
 
-    final contentFiles = [
-      'backgrounds.json',
-      'classes.json',
-      'feats.json',
-      'items.json',
-      'languages.json',
-      'proficiencies.json',
-      'races.json',
-      'spells.json',
-      'themes.json',
-    ];
-
     int successCount = 0;
     int failCount = 0;
 
-    for (final fileName in contentFiles) {
+    for (final fileName in JsonContentStorage.defaultContentFiles) {
       try {
         // Load from assets using rootBundle (doesn't require BuildContext)
         final assetPath = 'assets/srd/$fileName';
@@ -117,7 +110,8 @@ class JsonStorageService implements StorageService {
     return path.join(_baseDirectory.path, fileName);
   }
 
-  Future<Map<String, dynamic>?> _readJson(String fileName) async {
+  @override
+  Future<Map<String, dynamic>?> readJson(String fileName) async {
     if (!_initialized) {
       debugPrint(contentNotReadyMessage);
       return null;
@@ -134,7 +128,8 @@ class JsonStorageService implements StorageService {
     }
   }
 
-  Future<bool> _writeJson(String fileName, Map<String, dynamic> data) async {
+  @override
+  Future<bool> writeJson(String fileName, Map<String, dynamic> data) async {
     if (!_initialized) {
       debugPrint(contentNotReadyMessage);
       return false;
@@ -162,294 +157,6 @@ class JsonStorageService implements StorageService {
       }
     } catch (e) {
       debugPrint('Failed to write JSON to $fileName: $e');
-      return false;
-    }
-  }
-
-  @override
-  Future<List<Background>> loadBackgrounds() async {
-    try {
-      final data = await _readJson('backgrounds.json');
-      if (data == null || data['backgrounds'] == null) {
-        debugPrint('No background data found');
-        return [];
-      }
-      final backgroundList = data['backgrounds'] as List;
-      return backgroundList.map((json) => Background.fromJson(json)).toList();
-    } catch (e) {
-      debugPrint('Failed to load backgrounds: $e');
-      return [];
-    }
-  }
-
-  @override
-  Future<List<Class>> loadClasses() async {
-    try {
-      final data = await _readJson('classes.json');
-      if (data == null || data['classes'] == null) {
-        debugPrint('No class data found');
-        return [];
-      }
-      final classList = data['classes'] as List;
-      return classList.map((json) => Class.fromJson(json)).toList();
-    } catch (e) {
-      debugPrint('Failed to load classes: $e');
-      return [];
-    }
-  }
-
-  @override
-  Future<List<Feat>> loadFeats() async {
-    try {
-      final data = await _readJson('feats.json');
-      if (data == null || data['feats'] == null) {
-        debugPrint('No feat data found');
-        return [];
-      }
-      final featList = data['feats'] as List;
-      return featList.map((json) => Feat.fromJson(json)).toList();
-    } catch (e) {
-      debugPrint('Failed to load feats: $e');
-      return [];
-    }
-  }
-
-  @override
-  Future<List<Item>> loadItems() async {
-    try {
-      final data = await _readJson('items.json');
-      if (data == null || data['items'] == null) {
-        debugPrint('No item data found');
-        return [];
-      }
-      final itemList = data['items'] as List;
-      return itemList.map((json) => Item.fromJson(json)).toList();
-    } catch (e) {
-      debugPrint('Failed to load items: $e');
-      return [];
-    }
-  }
-
-  @override
-  Future<List<String>> loadLanguages() async {
-    try {
-      final data = await _readJson('languages.json');
-      if (data == null || data['languages'] == null) {
-        debugPrint('No language data found');
-        return [];
-      }
-      final languageList = data['languages'] as List;
-      return languageList.cast<String>();
-    } catch (e) {
-      debugPrint('Failed to load languages: $e');
-      return [];
-    }
-  }
-
-  @override
-  Future<List<Proficiency>> loadProficiencies() async {
-    try {
-      final data = await _readJson('proficiencies.json');
-      if (data == null || data['proficiencies'] == null) {
-        debugPrint('No proficiency data found');
-        return [];
-      }
-      final proficiencyList = data['proficiencies'] as List;
-      return proficiencyList.map((json) => Proficiency.fromJson(json)).toList();
-    } catch (e) {
-      debugPrint('Failed to load proficiencies: $e');
-      return [];
-    }
-  }
-
-  @override
-  Future<List<Race>> loadRaces() async {
-    try {
-      final data = await _readJson('races.json');
-      if (data == null || data['races'] == null) {
-        debugPrint('No race data found');
-        return [];
-      }
-      final raceList = data['races'] as List;
-      return raceList.map((json) => Race.fromJson(json)).toList();
-    } catch (e) {
-      debugPrint('Failed to load races: $e');
-      return [];
-    }
-  }
-
-  @override
-  Future<List<Spell>> loadSpells() async {
-    try {
-      final data = await _readJson('spells.json');
-      if (data == null || data['spells'] == null) {
-        debugPrint('No spell data found');
-        return [];
-      }
-      final spellList = data['spells'] as List;
-      return spellList.map((json) => Spell.fromJson(json)).toList();
-    } catch (e) {
-      debugPrint('Failed to load spells: $e');
-      return [];
-    }
-  }
-
-  @override
-  Future<List<ColourScheme>> loadThemes() async {
-    try {
-      final data = await _readJson('themes.json');
-      if (data == null || data['themes'] == null) {
-        debugPrint('No theme data found');
-        return [];
-      }
-      final themeList = data['themes'] as List;
-      return themeList.map((json) => ColourScheme.fromJson(json)).toList();
-    } catch (e) {
-      debugPrint('Failed to load themes: $e');
-      return [];
-    }
-  }
-
-  @override
-  Future<bool> saveBackgrounds(List<Background> backgrounds) async {
-    try {
-      final data = {
-        'backgrounds': backgrounds.map((bg) => bg.toJson()).toList(),
-        'version': '1.0',
-        'contentType': 'backgrounds',
-        'lastUpdated': DateTime.now().toIso8601String(),
-      };
-      return await _writeJson('backgrounds.json', data);
-    } catch (e) {
-      debugPrint('Failed to save backgrounds: $e');
-      return false;
-    }
-  }
-
-  @override
-  Future<bool> saveClasses(List<Class> classes) async {
-    try {
-      final data = {
-        'classes': classes.map((cls) => cls.toJson()).toList(),
-        'version': '1.0',
-        'contentType': 'classes',
-        'lastUpdated': DateTime.now().toIso8601String(),
-      };
-      return await _writeJson('classes.json', data);
-    } catch (e) {
-      debugPrint('Failed to save classes: $e');
-      return false;
-    }
-  }
-
-  @override
-  Future<bool> saveFeats(List<Feat> feats) async {
-    try {
-      final data = {
-        'feats': feats.map((feat) => feat.toJson()).toList(),
-        'version': '1.0',
-        'contentType': 'feats',
-        'lastUpdated': DateTime.now().toIso8601String(),
-      };
-      return await _writeJson('feats.json', data);
-    } catch (e) {
-      debugPrint('Failed to save feats: $e');
-      return false;
-    }
-  }
-
-  @override
-  Future<bool> saveItems(List<Item> items) async {
-    try {
-      final data = {
-        'items': items.map((item) => item.toJson()).toList(),
-        'version': '1.0',
-        'contentType': 'items',
-        'lastUpdated': DateTime.now().toIso8601String(),
-      };
-      return await _writeJson('items.json', data);
-    } catch (e) {
-      debugPrint('Failed to save items: $e');
-      return false;
-    }
-  }
-
-  @override
-  Future<bool> saveLanguages(List<String> languages) async {
-    try {
-      final data = {
-        'languages': languages,
-        'version': '1.0',
-        'contentType': 'languages',
-        'lastUpdated': DateTime.now().toIso8601String(),
-      };
-      return await _writeJson('languages.json', data);
-    } catch (e) {
-      debugPrint('Failed to save languages: $e');
-      return false;
-    }
-  }
-
-  @override
-  Future<bool> saveProficiencies(List<Proficiency> proficiencies) async {
-    try {
-      final data = {
-        'proficiencies': proficiencies.map((prof) => prof.toJson()).toList(),
-        'version': '1.0',
-        'contentType': 'proficiencies',
-        'lastUpdated': DateTime.now().toIso8601String(),
-      };
-      return await _writeJson('proficiencies.json', data);
-    } catch (e) {
-      debugPrint('Failed to save proficiencies: $e');
-      return false;
-    }
-  }
-
-  @override
-  Future<bool> saveRaces(List<Race> races) async {
-    try {
-      final data = {
-        'races': races.map((race) => race.toJson()).toList(),
-        'version': '1.0',
-        'contentType': 'races',
-        'lastUpdated': DateTime.now().toIso8601String(),
-      };
-      return await _writeJson('races.json', data);
-    } catch (e) {
-      debugPrint('Failed to save races: $e');
-      return false;
-    }
-  }
-
-  @override
-  Future<bool> saveSpells(List<Spell> spells) async {
-    try {
-      final data = {
-        'spells': spells.map((spell) => spell.toJson()).toList(),
-        'version': '1.0',
-        'contentType': 'spells',
-        'lastUpdated': DateTime.now().toIso8601String(),
-      };
-      return await _writeJson('spells.json', data);
-    } catch (e) {
-      debugPrint('Failed to save spells: $e');
-      return false;
-    }
-  }
-
-  @override
-  Future<bool> saveThemes(List<ColourScheme> themes) async {
-    try {
-      final data = {
-        'themes': themes.map((theme) => theme.toJson()).toList(),
-        'version': '1.0',
-        'contentType': 'themes',
-        'lastUpdated': DateTime.now().toIso8601String(),
-      };
-      return await _writeJson('themes.json', data);
-    } catch (e) {
-      debugPrint('Failed to save themes: $e');
       return false;
     }
   }

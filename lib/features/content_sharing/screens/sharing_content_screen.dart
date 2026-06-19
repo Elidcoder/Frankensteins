@@ -1,5 +1,5 @@
 // External Import
-import 'dart:io';
+import 'dart:convert';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -97,15 +97,18 @@ class SharingContent extends StatelessWidget {
           "Navigate to and select a Json file to download the contents from, this content can then be used in your characters",
       type: FileType.custom,
       allowedExtensions: ["json"],
+      // Request the file contents directly so this works on web (where there
+      // is no file path) as well as desktop.
+      withData: true,
     );
 
     try {
       if (result == null) throw Exception("File cannot be found");
-      if (result.files.single.path == null) {
-        throw Exception("File path is null");
+      final bytes = result.files.single.bytes;
+      if (bytes == null) {
+        throw Exception("File contents could not be read");
       }
-      await GlobalListManager()
-          .loadContentFromFile(File(result.files.single.path!));
+      await GlobalListManager().loadContentFromJson(utf8.decode(bytes));
 
       // Show success message
       // ignore: use_build_context_synchronously

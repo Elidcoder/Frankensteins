@@ -1,0 +1,35 @@
+{
+  "background_color": "#0175C2",
+  "description": "A free, open-source D&D 5e character builder.",
+  "display": "standalone",
+  "icons": [
+    {
+      "sizes": "192x192",
+      "src": "icons/Icon-192.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "512x512",
+      "src": "icons/Icon-512.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "192x192",
+      "src": "icons/Icon-maskable-192.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icons/Icon-maskable-512.png",
+      "type": "image/png"
+    }
+  ],
+  "name": "Frankenstein's D&D 5e Character Builder",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "short_name": "Frankenstein's",
+  "start_url": ".",
+  "theme_color": "#0175C2"
+}

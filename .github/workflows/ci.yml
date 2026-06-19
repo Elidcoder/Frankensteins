@@ -1,0 +1,56 @@
+name: CI
+
+# Runs on every feature-branch push and on every PR targeting master.
+# Direct pushes to master are blocked by the pre-commit no-commit-to-branch
+# hook, so we skip the master push trigger to avoid double-runs after merges.
+on:
+  push:
+    branches-ignore:
+      - master
+  pull_request:
+    branches: [master]
+
+# Cancel in-progress runs on the same ref when a newer commit arrives.
+# Saves CI minutes during rapid pushes.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze-and-test:
+    name: Analyze + test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        # Pin a specific Flutter version for reproducibility — bump
+        # this in lock-step with your local 'flutter --version'.
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Resolve dependencies
+        run: flutter pub get
+
+      - name: Verify generated *.g.dart files are committed
+        # The project commits json_serializable output. If a model changed
+        # without regenerating, CI catches it here instead of at runtime.
+        run: |
+          dart run build_runner build --delete-conflicting-outputs
+          DIRTY=$(git status --porcelain | grep '\.g\.dart$' || true)
+          if [ -n "$DIRTY" ]; then
+            echo "::error::Generated *.g.dart files are out of sync with source. Run 'dart run build_runner build --delete-conflicting-outputs' locally and commit the diff."
+            git diff -- '*.g.dart'
+            exit 1
+          fi
+
+      - name: Static analysis
+        run: flutter analyze --fatal-infos --fatal-warnings
+
+      - name: Unit tests
+        run: flutter test --reporter=expanded
